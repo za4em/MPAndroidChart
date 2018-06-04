@@ -74,6 +74,11 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<?
         //mXAxis.mAxisRange = mData.getXVals().size() - 1;
     }
 
+    public void onSwipe(MotionEvent motionEvent){
+        if (mChartTouchListener!=null)
+            mChartTouchListener.onSingleTapUp(motionEvent);
+    }
+
     @Override
     public int getMaxVisibleCount() {
         return mData.getEntryCount();
